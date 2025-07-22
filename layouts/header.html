@@ -1,0 +1,124 @@
+<header class="site-header">
+    <div class="container">
+        <!-- Левая часть: логотип и бургер -->
+        <div class="header-left">
+            <button class="burger" onclick="toggleMobileMenu()"><img src="/images/icons/burger-menu.svg"></button>
+            <a href="/index.html"><img class="logo" src="../images/logo1.svg" alt="logo_taiba" /></a>
+            <a href="tel:+998781404449" class="phone-mobile_menu">
+                <img src="../images/icons/phone-call.svg" />
+            </a>
+        </div>
+
+        <!-- Основная навигация -->
+        <div class="navigation">
+            <nav class="main-nav">
+                <ul class="nav">
+                    <div class="services-select">
+                        <button class="services-toggle" onclick="toggleDropdown(this)">
+                            Услуги <img src="../images/icons/arrow-down.svg" />
+                        </button>
+                        <ul class="services-dropdown">
+                            <li><a href="/ijara.html">Иджара</a></li>
+                            <li><a href="/murabakha">Мурабаха</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="services-select">
+                        <button class="services-toggle" onclick="toggleDropdown(this)">
+                            О компании <img src="../images/icons/arrow-down.svg" />
+                        </button>
+                        <ul class="services-dropdown">
+                            <li><a href="/about_company">О компании</a></li>
+                            <li><a href="/vacancies">Вакансии</a></li>
+                        </ul>
+                    </div>
+
+                    <li><a href="/shariat">Соответствие Шариату</a></li>
+                    <li><a href="/news">Новости</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="phone_lang">
+                <a href="tel:+998781404449">
+                    <img src="../images/icons/Phone.svg" /> +998 (78) 140-44-49
+                </a>
+                <div class="language-selector">
+                    <button class="lang-btn" onclick="toggleLangDropdown()">
+                        <img id="selectedLang" src="../images/icons/ru.svg" alt="Русский" />
+                        <img class="imgArrow" src="../images/icons/arrow-down.svg" />
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <div data-lang="ru">
+                            <img src="../images/icons/ru.svg" alt="Русский" data-lang="ru" />
+                            <span>Русский</span>
+                        </div>
+                        <div data-lang="uz">
+                            <img src="../images/icons/uz.svg" alt="O’zbek" data-lang="uz" />
+                            <span>O’zbek</span>
+                        </div>
+                        <div data-lang="en">
+                            <img src="../images/icons/gb.svg" alt="English" data-lang="en" />
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- Меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+            <img src="../images/logo1.svg" alt="TAIBA Finance" />
+            <button class="close-btn" onclick="toggleMobileMenu()"><img src="../images/icons/close-burger.svg"></button>
+        </div>
+
+        <nav class="mobile-menu__nav">
+            <div class="services-select">
+                <button class="services-toggle" onclick="toggleMobileSubMenu(this)">
+                    Услуги <img src="../images/icons/arrow-down.svg" />
+                </button>
+                <ul class="services-dropdown sub-menu">
+                    <li class="sub-item"><a href="../pages/ijara.html">
+                            Иджара
+                        </a></li>
+                    <li class="sub-item"><a href="/murabakha">
+                            Мурабаха
+                        </a></li>
+                </ul>
+            </div>
+            <div class="services-select">
+                <button class="services-toggle" onclick="toggleMobileSubMenu(this)">
+                    О компании <img src="../images/icons/arrow-down.svg" />
+                </button>
+                <ul class="services-dropdown sub-menu">
+                    <li class="sub-item"><a href="/about_company">
+                            О компании
+                        </a></li>
+                    <li class="sub-item"><a href="/vacancies">
+                            Вакансии
+                        </a></li>
+                </ul>
+            </div>
+            <a href="/shariat">Соответствие Шариату</a>
+            <a href="/news">Новости</a>
+            <a href="/contacts">Контакты</a>
+        </nav>
+
+        <div class="mobile-menu__bottom">
+            <div class="mobile-menu__langs">
+                <img src="../images/icons/ru.svg" alt="Русский" data-lang="ru" onclick="setLanguage('ru')" />
+                <img src="../images/icons/uz.svg" alt="O’zbek" data-lang="uz" onclick="setLanguage('uz')" />
+                <img src="../images/icons/gb.svg" alt="English" data-lang="en" onclick="setLanguage('en')" />
+            </div>
+            <div class="mobile-menu__phone">
+                <a href="tel:+998781404449">+998 (78) 140-44-49</a>
+                <p>9:00–18:00 по будням</p>
+            </div>
+        </div>
+    </div>
+</header>
