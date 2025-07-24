@@ -140,7 +140,7 @@ function waitForPartnersSwiperAndInit() {
         }
     }, 100);
 }
-function smoothScroll() {
+export function smoothScroll() {
     const requestBtn = document.getElementById("request");
 
     requestBtn?.addEventListener("click", function (e) {

@@ -2,6 +2,7 @@ import { initializeHeader } from './header.js';
 import { initializeContactWidget } from './vidjet.js';
 import { initFormSwitcher } from './form_approval.js';
 import { initializeDropdownMenus } from './footer.js';
+import { newsSwiper } from './news.js';
 import { showFAQ } from './faq.js';
 
 async function includeHTML(selector) {
@@ -20,30 +21,24 @@ document.addEventListener("DOMContentLoaded", async () => {
     initializeHeader();
     initializeContactWidget();
     initFormSwitcher();
+
+    waitForNewsSwiperAndInit();
     initializeDropdownMenus();
     showFAQ();
     smoothScroll();
 
+    const swiperContainer = document.querySelector('.newsSwiper');
+    if (swiperContainer && swiperContainer.querySelector('.swiper-slide')) {
+        newsSwiper();
+    }
 });
-export function smoothScroll() {
-    const requestBtn = document.getElementById("request");
-
-    requestBtn?.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const scrollToForm = () => {
-            const target = document.getElementById("form-approval");
-
-            if (target) {
-                const yOffset = -300;
-                const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-                window.scrollTo({ top: y, behavior: "smooth" });
-            } else {
-                setTimeout(scrollToForm, 100);
-            }
-        };
-
-        scrollToForm();
-    });
+function waitForNewsSwiperAndInit() {
+    const checkExist = setInterval(() => {
+        const swiperEl = document.querySelector('.newsSwiper');
+        const slideEls = document.querySelectorAll('.newsSwiper .swiper-slide');
+        if (swiperEl && slideEls.length > 0) {
+            clearInterval(checkExist);
+            newsSwiper();
+        }
+    }, 100);
 }

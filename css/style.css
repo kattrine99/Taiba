@@ -40,7 +40,8 @@ body {
     list-style: none;
 }
 
-.container {
+.container,
+.legal-entity-docs {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -76,6 +77,7 @@ body {
 .mobile-menu__phone a,
 .mobile-menu__phone p,
 .swiper-mainButtons a,
+.mainSection-buttons a,
 .footer_navigation li a {
     text-decoration: none;
     color: #3A4342;
@@ -362,7 +364,8 @@ body {
 }
 
 /* ---------- Главный слайдер ---------- */
-.main-swiper {
+.main-swiper,
+.mainSection {
     margin: calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340))) calc(16px + (50 - 16) * ((100vw - 340px) / (1600 - 340))) 0;
     background: repeating-linear-gradient(60deg,
             #01575C,
@@ -370,10 +373,21 @@ body {
             #01575C,
             #01575C 80%);
     background-repeat: repeat;
+    overflow: hidden;
     border-radius: 16px;
 }
 
-.swiper-content {
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(407px + (600 - 407) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.swiper-content,
+.mainSection-component {
     width: auto;
     height: 100%;
     background-image: url(/images/main-img1.svg);
@@ -382,14 +396,46 @@ body {
     background-size: clamp(50%, 10vw, 100%) auto;
 }
 
-.textAndButtons {
+.mainSection-component {
+    background-image: url(/images/main-img-ijara.svg);
+
+}
+
+.ijara-product {
+    background-image: url(/images/main-img-ijara-product.svg);
+}
+
+.murabakha {
+    background-image: url(/images/murabakha_main-img.svg);
+}
+
+.vacancies {
+    background-image: url(/images/vacancies-img.webp);
+    background-size: 50%;
+    overflow: hidden;
+}
+
+.shariat-full {
+    background-image: url(/images/shariat-img.webp);
+    background-size: 40%;
+    overflow: hidden;
+}
+
+.textAndButtons,
+.mainSection-container {
     padding: calc(40px + (88 - 40) * ((100vw - 340px) / (1600 - 340))) calc(16px + (39 - 16) * ((100vw - 340px) / (1600 - 340)));
     display: flex;
     flex-direction: column;
     gap: calc(48px + (64 - 48) * ((100vw - 340px) / (1600 - 340)));
 }
 
+.contacts_section-container {
+    padding: calc(40px + (88 - 40) * ((100vw - 340px) / (1600 - 340))) calc(16px + (39 - 16) * ((100vw - 340px) / (1600 - 340))) 0;
+
+}
+
 .swiper-mainText h1,
+.mainSection-text h1,
 .aboutUs_text h2 {
     font-weight: 700;
     font-size: calc(32px + (56 - 32) * ((100vw - 340px) / (1600 - 340)));
@@ -401,6 +447,8 @@ body {
 }
 
 .swiper-mainText p,
+
+.mainSection-text p,
 .aboutUs_text p {
     font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
     line-height: 115%;
@@ -410,7 +458,8 @@ body {
     margin-top: 16px;
 }
 
-.swiper-mainButtons {
+.swiper-mainButtons,
+.mainSection-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -418,7 +467,8 @@ body {
     max-width: 40rem;
 }
 
-.swiper-mainButtons a {
+.swiper-mainButtons a,
+.mainSection-buttons a {
     flex: 1 1;
     min-width: 200px;
     display: flex;
@@ -450,14 +500,26 @@ body {
 /* ---------- Услуги ---------- */
 .main-services,
 .trust-section,
+.characteistics-section,
 .short-aboutUs,
 .partners,
-.faq-block {
+.faq-block,
+.products,
+.ads_banner_horisontal,
+.deals-section,
+.qualities,
+.documents,
+.news-infoFull {
     margin: calc(100px + (150 - 100) * ((100vw - 340px) / (1600 - 340))) calc(16px + (50 - 16) * ((100vw - 340px) / (1600 - 340))) 0;
+}
+
+.documents .documents_text h2 {
+    margin-bottom: calc(32px + (48 - 32) * ((100vw - 340px) / (1600 - 340)));
 }
 
 .main-services p,
 .trust-section_breadcrumb p,
+.characteistics-section_breadcrumb p,
 .aboutUs_breadcrumb p,
 .form-textAnd-phone .form-text p,
 .form-phone p,
@@ -467,7 +529,12 @@ body {
 .news_breadcrumb p,
 .swipe_Text p,
 .partners_breadcrumb p,
-.faq_breadcrumb p {
+.faq_breadcrumb p,
+.products_breadcrumb p,
+.deals-section_breadcrumb p,
+.qualities_breadcrumb p,
+.documents_breadcrumb p,
+.contacts_section-breadcrumb p {
     flex: 1;
     font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
     line-height: 120%;
@@ -477,29 +544,48 @@ body {
 }
 
 .main-service_breadcrumb p,
+.products_breadcrumb p,
 .trust-section_breadcrumb p,
+.characteistics-section_breadcrumb p,
 .aboutUs_breadcrumb p,
 .news_breadcrumb p,
 .partners_breadcrumb p,
-.faq_breadcrumb p {
+.faq_breadcrumb p,
+.deals-section_breadcrumb p,
+.qualities_breadcrumb p,
+.documents_breadcrumb p {
     font-size: calc(14px + (16 - 14) * ((100vw - 340px) / (1600 - 340)));
     margin-bottom: calc(14px + (16 - 14) * ((100vw - 340px) / (1600 - 340)));
 }
 
-.main-services_text {
+.main-services_text,
+.products_text,
+.deals-heading,
+.products_card_maintext {
     display: flex;
     gap: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
     margin-bottom: calc(32px + (48 - 32) * ((100vw - 340px) / (1600 - 340)));
 }
 
 .main-services_text h2,
+.products_text h2,
 .form-textAnd-phone .form-text h2,
 .form-phone h3,
 .trust-heading h2,
+.characteistics-heading h2,
 .have_questions_text h2,
 .news_textAnd_buttons h2,
+.contacts_section-text h1,
+.company h2,
+.companyInfo h2,
+.companyMap h2,
 .partners_text h2,
-.faq-block h2 {
+.faq-block h2,
+.banner h2,
+.banner-small h2,
+.deals-heading h2,
+.products_card_maintext h2,
+.aboutUs_text h2 {
     flex: 1;
     font-weight: 700;
     font-size: calc(30px + (48 - 30) * ((100vw - 340px) / (1600 - 340)));
@@ -509,6 +595,11 @@ body {
     color: #184B50;
 }
 
+.contacts_section-text h1 {
+    font-size: calc(26px + (48 - 26) * ((100vw - 340px) / (1600 - 340)));
+
+}
+
 .main-services_cards {
     display: flex;
     width: 100%;
@@ -516,7 +607,16 @@ body {
     gap: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
 }
 
-.main-service_card {
+.products_cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    align-items: stretch;
+    gap: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.main-service_card,
+.products_card {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -527,7 +627,10 @@ body {
     padding: calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340)));
 }
 
-.main-service_card_text {
+.main-service_card_text,
+.products_card_text,
+.deals-card-text,
+.qualities-card-text {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -535,7 +638,38 @@ body {
     gap: calc(8px + (16 - 8) * ((100vw - 340px) / (1600 - 340)));
 }
 
-.main-service_card .btn {
+.products_card_text h3,
+.deals-card-text h3,
+.qualities-card-text h3 {
+    font-weight: 700;
+    font-size: calc(20px + (24 - 20) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 110%;
+    color: #3A4342;
+}
+
+.conditions_text h2 {
+    margin-bottom: calc(30px + (48 - 30) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.products_card_text p,
+.deals-card-text p,
+.products_card_text p,
+.qualities-card-text p,
+.info-text p,
+.info-button-next-news,
+.info-button-prev-news {
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 120%;
+    color: #3A4342;
+}
+
+.qualities-card-text span {
+    font-weight: bold;
+}
+
+.main-service_card .btn,
+.products_card .btn,
+.shariat-card-footer .btn {
     width: 54px;
     height: 54px;
     display: flex;
@@ -544,14 +678,17 @@ body {
     border-radius: 8px;
     border: 1px solid #D1C29D;
     color: #184B50;
+    background-color: #fff;
+
+    &:hover {
+        background-color: #D1C29D;
+        color: white;
+    }
 }
 
-.main-service_card .btn:hover {
-    background-color: #D1C29D;
-    color: white;
-}
 
-#ijara {
+
+#avto {
     background-image: url('/images/auto.svg');
     background-repeat: no-repeat;
     background-position: bottom right;
@@ -559,10 +696,40 @@ body {
 }
 
 #murabakha {
-    background-image: url('/images/house.svg');
+    background-image: url('/images/murabakha_main-img.svg');
     background-repeat: no-repeat;
     background-position: bottom right;
-    background-size: 90%;
+    background-size: clamp(50%, 10vw + 40%, 70%);
+}
+
+#house {
+    background-image: url('/images/product-ijara2.svg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+#technic {
+    background-image: url('/images/product-ijara3.svg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+#promtechnic {
+    background-image: url('/images/product-ijara4.svg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+#items {
+    background-image: url('/images/product-murabakha2.svg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+#apartments {
+    background-image: url('/images/product-murabakha1.svg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
 
 
@@ -587,11 +754,6 @@ body {
 
 .form-approval-mobile {
     display: none;
-}
-
-.form-approval {
-    display: flex;
-    flex-direction: column;
 }
 
 .form-approval {
@@ -640,7 +802,9 @@ body {
 .form-approval-mobile input,
 .have_questions_form-input input,
 .form-approval input,
-.file-label {
+.file-label,
+#file,
+.form-group input {
     padding: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340))) calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340)));
     font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
     line-height: 120%;
@@ -779,16 +943,19 @@ body {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: background 0.3s ease;
+}
+
+#file {
+    display: flex;
+    align-items: center;
+    ;
+    cursor: pointer;
+    color: #fff;
 }
 
 .file-label img {
     width: 20px;
     height: 20px;
-}
-
-.file-label:hover {
-    background: linear-gradient(90deg, #148386 0%, #3fb6ac 100%);
 }
 
 .file-upload-input {
@@ -820,8 +987,8 @@ body {
     color: #D1C29D;
 }
 
-.note,
-.note a,
+.form-approval .note,
+.form-approval .note a,
 .have_questions_form p,
 .have_questions_form p a {
     margin-top: 16px;
@@ -836,20 +1003,22 @@ body {
 }
 
 /* ---------- Преимущества ---------- */
-.trust-grid {
+.trust-grid,
+.characteistics-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, auto);
     gap: 24px;
     position: relative;
-
 }
 
-.trust-heading {
+.trust-heading,
+.characteistics-heading {
     grid-column: 1 / 3;
 }
 
-.trust-card {
+.trust-card,
+.characteistics-card {
     display: flex;
     flex-direction: column;
     gap: calc(24px + (64 - 24) * ((100vw - 340px) / (1600 - 340)));
@@ -865,9 +1034,7 @@ body {
     align-items: center;
     justify-content: center;
     color: #3A4342;
-}
 
-.trust-card {
     &:hover {
         background: #d8c29d;
         color: #fff;
@@ -879,7 +1046,13 @@ body {
     }
 }
 
-.trust-card .icon {
+.trust-card .icon,
+.characteistics-card .icon,
+.deals-card .icon,
+.qualities-card .icon,
+.legal-entity-docs_card .icon,
+.legal-entity-docs_rightCard .icon,
+.legal-entity-docs_leftCard .icon {
     background-color: #d8c29d;
     border-radius: 16px;
     margin-bottom: 16px;
@@ -889,60 +1062,99 @@ body {
     align-items: center;
     justify-content: center;
     color: #fff;
+    flex-shrink: 0;
 }
-
-
 
 /* Расположение карточек по сетке */
 
-.card-1 {
+.trust-grid .card-1 {
     grid-column: 4 / 5;
     grid-row: 1;
 }
 
-.card-2 {
+.trust-grid .card-2 {
     grid-column: 2 / 3;
     grid-row: 2;
 }
 
-.card-3 {
+.trust-grid .card-3 {
     grid-column: 3 / 4;
     grid-row: 2;
 }
 
-.card-4 {
+.trust-grid .card-4 {
     grid-column: 1 / 2;
     grid-row: 3;
     position: relative;
 }
 
-.card-5 {
+.trust-grid .card-5 {
     grid-column: 2 / 3;
     grid-row: 3;
 }
 
-.card-6 {
+.trust-grid .card-6 {
     grid-column: 4 / 5;
     grid-row: 3;
 }
 
+.characteistics-grid .card-1 {
+    grid-column: 3 / 4;
+    grid-row: 1;
+}
+
+.characteistics-grid .card-2 {
+    grid-column: 4 / 5;
+    grid-row: 1;
+}
+
+.characteistics-grid .card-3 {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+.characteistics-grid .card-4 {
+    grid-column: 4 / 5;
+    grid-row: 2;
+}
+
+.characteistics-grid .card-5 {
+    grid-column: 1 / 2;
+    grid-row: 3;
+}
+
+.characteistics-grid .card-6 {
+    grid-column: 3 / 4;
+    grid-row: 3;
+}
+
 /* ---------- Немного о нас ---------- */
-.short-aboutUs_content {
+.short-aboutUs_content,
+.qualities_content,
+.murabakha_text-and-breadcrumbs,
+.breadcrumbsAndText {
     display: flex;
     justify-content: space-between;
 }
 
-.aboutUs_text h2 {
+.aboutUs_text h2,
+.qualities_text h2,
+.documents_text h2 {
     font-size: calc(32px + (48 - 32) * ((100vw - 340px) / (1600 - 340)));
     color: #184B50;
 }
 
 .aboutUs_text h2,
-.aboutUs_text p {
+.aboutUs_text p,
+.qualities_text h2,
+.qualities_text p,
+.murabakha_text-and-breadcrumbs .products_card_maintext h2,
+.documents_text h2 {
     max-width: 60rem;
 }
 
-.aboutUs_text p {
+.aboutUs_text p,
+.qualities_text p {
     color: #999D9C;
     margin-top: 16px;
     margin-bottom: 32px;
@@ -1044,7 +1256,10 @@ body {
 }
 
 /* ---------- Новости ---------- */
-.news {
+.news,
+.company,
+.companyInfo,
+.companyMap {
     margin: calc(150px + (200 - 150) * ((100vw - 340px) / (1600 - 340))) calc(16px + (50 - 16) * ((100vw - 340px) / (1600 - 340))) 0;
     display: flex;
     flex-direction: column;
@@ -1107,18 +1322,23 @@ body {
     }
 }
 
-.swipe_img {
+.swipe_img .shariat-card-img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     overflow: hidden;
     background-color: #eee;
 }
 
-.swipe_img img {
+.swipe_img img,
+.shariat-card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.shariat-card-img img {
+    border-radius: 16px;
 }
 
 .swipe_Text {
@@ -1402,6 +1622,575 @@ footer {
     background-color: #D1C29D;
 }
 
+/* ---------- Иджара ---------- */
+.mainSection-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: calc(16px + (39 - 16) * ((1399px - 340px) / (1600 - 340))) calc(32px + (48 - 32) * ((100vw - 340px) / (1600 - 340))) 0;
+    gap: 12px;
+}
+
+.mainSection-breadcrumb .grey,
+.mainSection-breadcrumb a {
+    font-size: 18px;
+    line-height: 120%;
+    color: #FFFFFF80;
+}
+
+.mainSection-breadcrumb a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* ---------- Этапы заключения сделки ---------- */
+#deals-desktop .deals-grid,
+.cards,
+.others {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 24px;
+    position: relative;
+}
+
+#deals-mobile .deals-section {
+    display: none;
+}
+
+.deals-card,
+.qualities-card {
+    display: flex;
+    flex-direction: column;
+    gap: calc(24px + (64 - 24) * ((100vw - 340px) / (1600 - 340)));
+    background: #fff;
+    border-radius: 16px;
+    padding: calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340))) calc(24px + (30 - 24) * ((100vw - 340px) / (1600 - 340)));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #3A4342;
+}
+
+/* ---------- рекламный баннер ---------- */
+.ads_banner_horisontal {
+    height: 22rem;
+}
+
+.ads_banner_vertical {
+    width: 100%;
+    height: 42rem;
+}
+
+.ads_banner_vertical .banner-small {
+    width: 100%;
+    height: 42rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    background-color: #D1C29D;
+    border-radius: 16px;
+}
+
+.ads_banner_vertical .banner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    background-color: #D1C29D;
+    border-radius: 16px;
+}
+
+.banner h2,
+.banner-small h2 {
+    color: white;
+    text-align: center;
+}
+
+/* ---------- особенности ---------- */
+.qualities_cards {
+    display: flex;
+}
+
+.cards {
+    display: grid;
+    gap: 20px;
+}
+
+/* ---------- документы ---------- */
+.documents {
+    display: flex;
+    flex-direction: column;
+    gap: calc(100px + (150 - 100) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.legal-entity-docs {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.legal-entity-docs_left,
+.legal-entity-docs_right {
+    display: flex;
+    flex-direction: column;
+    gap: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+
+}
+
+.legal-entity-docs_rightCard,
+.legal-entity-docs_leftCard,
+.legal-entity-docs_card {
+    display: flex;
+    flex: 1;
+    gap: 32px;
+    background-color: #fff;
+    border-radius: 16px;
+    align-items: center;
+    padding: calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.legal-entity-docs_rightCard p,
+.legal-entity-docs_leftCard li,
+.legal-entity-docs_leftCard p,
+.legal-entity-docs_card p {
+    font-size: 20px;
+    line-height: 120%;
+    color: #3A4342;
+}
+
+.others-murabakha {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+}
+
+/* ---------- 404 ---------- */
+.error-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.error-text h1 {
+    font-weight: 700;
+    font-size: calc(140px + (250 - 140) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 80%;
+    letter-spacing: 1%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.error-text p {
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 110%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 48px;
+}
+
+.error-buttons {
+    padding: 16px 32px;
+    background-color: #FFFFFF1A;
+    border-radius: 16px;
+}
+
+.error-buttons a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ---------- Контакты ---------- */
+.contacts_section-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 calc(32px + (48 - 32) * ((100vw - 340px) / (1600 - 340))) 0;
+    gap: 12px;
+    align-items: baseline;
+}
+
+.contacts_section-breadcrumb .grey,
+.data p {
+    font-size: 18px;
+    line-height: 120%;
+    color: #999D9C;
+}
+
+.contacts_section-breadcrumb a,
+.contacts_section-breadcrumb #active p {
+    text-decoration: none;
+    color: #3A4342;
+}
+
+.contacts_section-images {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.image-wrapper {
+    flex: 1;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 16px;
+    position: relative;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info-box {
+    background-color: #fff;
+    padding: 0 40px;
+    border-radius: 16px;
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 110%;
+    margin-top: 40px;
+}
+
+.info-row {
+    display: flex;
+    padding: 32px 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.info-label {
+    flex: 1;
+    min-width: 180px;
+    color: #999D9C;
+}
+
+.info-value {
+    text-align: right;
+    flex: 2;
+    font-weight: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 120%;
+    color: #3A4342;
+    min-width: 200px;
+}
+
+.info-text ul,
+.info-text ol {
+    padding-left: 20px;
+}
+
+.info-text span {
+    font-weight: 600;
+}
+
+.info-text ul li,
+.info-text ol li,
+.form-group::placeholder,
+.file-label,
+.comments textarea::placeholder {
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 120%;
+    color: #999D9C;
+}
+
+.divider {
+    border-top: 1px solid #D9D9D9;
+}
+
+/* ---------- Новости полная информация ---------- */
+.news-infoFull {
+    display: flex;
+    gap: 50px;
+}
+
+.full-info {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.full-info-textImg {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 48px;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex-grow: 1;
+    align-items: stretch;
+}
+
+.full-info-img {
+    width: 100%;
+    height: calc(200px + (400 - 200) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.full-info-img img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    height: calc(200px + (400 - 200) * ((100vw - 340px) / (1600 - 340)));
+}
+
+#ads {
+    display: flex;
+    flex: 0.5;
+}
+
+.full-info-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: calc(30px + (120 - 30) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.info-button-prev-news,
+.info-button-next-news {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/* ---------- Вакансии ---------- */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.form-group {
+    flex: 1 1 30%;
+    position: relative;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.file-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 16px;
+    background-color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    flex: 1 1 30%;
+    position: relative;
+}
+
+.file-label input[type="file"] {
+    display: none;
+}
+
+.file-name-display {
+    flex: 1 1 100%;
+    font-size: 14px;
+    color: #3A4342;
+    margin-top: -8px;
+    margin-left: 4px;
+}
+
+.contact-form textarea {
+    width: 100%;
+    height: 120px;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.form-button {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.submit-btn {
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #c3a869;
+}
+
+.note {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #3A4342;
+}
+
+.note a {
+    color: #3A4342;
+    text-decoration: underline;
+}
+
+/* ---------- Шариат ---------- */
+.shariat-articles {
+    margin: calc(100px + (150 - 100) * ((100vw - 340px) / (1600 - 340))) calc(16px + (50 - 16) * ((100vw - 340px) / (1600 - 340))) 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 20px;
+}
+
+.shariat-articles_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+.shariat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    border-radius: 16px;
+    padding: 32px;
+    background: #fff;
+    text-decoration: none;
+    z-index: 1;
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        z-index: 10;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.12);
+    }
+}
+
+.shariat-card h4 {
+    font-weight: 700;
+    font-size: calc(20px + (24 - 20) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 110%;
+    color: #3A4342;
+}
+
+.shariat-card p,
+.shariat-card span {
+    flex: 1;
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 120%;
+    color: #999D9C;
+}
+
+.shariat-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#paginationControls {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+}
+
+#paginationControls button {
+    background: #fff;
+    color: #01575C;
+    outline: none;
+    border: 1px solid #01575C;
+    padding: 16px 20px;
+    font-size: 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#paginationControls button.active {
+    background: #01575C;
+    color: #fff;
+}
+
+#paginationControls button:disabled {
+    background: #d4d2d2;
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: not-allowed;
+}
+
+#paginationControls .pagination-page {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+/* ---------- Карта ---------- */
+
+.map-section {
+    padding: 40px 0;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 100%;
+    height: 650px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+#mapOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+#map {
+    pointer-events: none;
+    transition: 0.3s ease;
+    border-radius: 16px;
+    width: 100%;
+    height: calc(340px + (650 - 340) * ((100vw - 340px) / (1600 - 340)));
+    max-width: 100%;
+    overflow: hidden;
+    margin-top: calc(32px + (48 - 32) * ((100vw - 340px) / (1600 - 340)));
+}
+
+#map.active {
+    pointer-events: auto;
+}
+
 @media (max-width: 1360px) {
     /* ---------- Хедер ---------- */
 
@@ -1469,16 +2258,19 @@ footer {
 @media (max-width:1280px) {
     /* ---------- Главный слайдер ---------- */
 
-    .swiper-content {
+    .swiper-content,
+    .mainSection-component {
         background-image: none;
     }
 
-    .textAndButtons {
+    .textAndButtons,
+    .mainSection-container {
         text-align: center;
         align-items: center;
     }
 
-    .swiper-mainButtons {
+    .swiper-mainButtons,
+    .mainSection-buttons {
         flex-direction: column;
         align-items: stretch;
         width: 100%;
@@ -1494,6 +2286,11 @@ footer {
     .main-services_text,
     .main-services_cards {
         flex-direction: column;
+    }
+
+    .products_cards,
+    .others-murabakha {
+        grid-template-columns: 1fr;
     }
 
     /* ---------- Форма одобрение за 1 час  ---------- */
@@ -1543,7 +2340,8 @@ footer {
 
     /* ---------- О нас  ---------- */
 
-    .short-aboutUs_content {
+    .short-aboutUs_content,
+    .breadcrumbsAndText {
         flex-direction: column;
     }
 
@@ -1561,9 +2359,79 @@ footer {
         justify-content: left;
     }
 
-    /* ---------- Футер  ---------- */
+    /* ---------- Партнеры  ---------- */
     .partners_text h2 {
         text-align: left;
+    }
+
+    /* ---------- Иджара этапы сделки  ---------- */
+    #deals-desktop .deals-section {
+        display: none;
+    }
+
+    #deals-mobile .deals-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #deals-mobile .deals-grid,
+    .cards {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+
+    /* ---------- особенности ---------- */
+    .qualities_cards,
+    .qualities_content {
+        flex-direction: column;
+    }
+
+    /* ---------- Документы  ---------- */
+    .legal-entity-docs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .legal-entity-docs_rightCard,
+    .legal-entity-docs_leftCard,
+    .legal-entity-docs_card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        padding: calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340)));
+    }
+
+    /* ---------- Контакты  ---------- */
+    .contacts_section-images {
+        flex-direction: column;
+    }
+
+    .info-row,
+    .info-value {
+        flex-direction: column;
+        text-align: start;
+        gap: 8px;
+    }
+
+
+    /* ---------- полная нформация новости  ---------- */
+    #ads {
+        display: none;
+    }
+
+    .info-button-prev-news {
+        display: none;
+    }
+
+    .full-info-buttons {
+        justify-content: end;
+    }
+
+    .shariat-articles_cards {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     /* ---------- Футер  ---------- */
@@ -1605,6 +2473,18 @@ footer {
 }
 
 @media (max-width:680px) {
+
+    /* ---------- Иджара этапы сделки  ---------- */
+    #deals-mobile .deals-grid,
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .shariat-articles_cards {
+        grid-template-columns: 1fr;
+    }
+
     .connection-container .main_img {
         width: 44px;
         height: 44px;
@@ -1643,5 +2523,9 @@ footer {
     .sub-button {
         width: 32px;
         height: 32px;
+    }
+
+    .form-row {
+        flex-direction: column;
     }
 }

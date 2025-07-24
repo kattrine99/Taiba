@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     smoothScroll();
 
 });
+
 export function smoothScroll() {
     const requestBtn = document.getElementById("request");
 

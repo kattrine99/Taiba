@@ -1,0 +1,5 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 10.5H29" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<path d="M3 28L7.88245 20.9172C8.08118 20.6289 8.50705 20.6289 8.70579 20.9172L13.1432 27.3544C13.3507 27.6554 13.8005 27.6392 13.9858 27.3241L23 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+<circle cx="3" cy="3" r="2" transform="matrix(1 0 0 -1 20 14)" fill="white" stroke="white" stroke-width="2"/>
+</svg>

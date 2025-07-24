@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div data-include="/layouts/header.html"></div>
+    <div data-include="/components/vidjet_connection.html"></div>
+    <main>
+        <div class="contacts_section">
+            <div class="contacts_section-component">
+                <div class="contacts_section-breadcrumb">
+                    <a href="/index.html" class="grey">
+                        <p>Главная</p>
+                    </a>
+                    <span class="grey"> >> </span>
+                    <a href="#" id="active">
+                        <p>Контакты</p>
+                    </a>
+                </div>
+                <div class="contacts_section-container">
+                    <div class="contacts_section-text">
+                        <h1>Контакты</h1>
+                    </div>
+                    <div class="contacts_section-images">
+                        <div class="image-wrapper">
+                            <img src="/images/contacts-img1.webp" alt="">
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="/images/contacts-img2.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="company">
+            <h2>Наименование компании</h2>
+            <div class="info-box">
+                <div class="info-row">
+                    <div class="info-label">Краткое наименование</div>
+                    <div class="info-value">ИП ООО «TAIBA FINANCE»</div>
+                </div>
+                <div class="divider"></div>
+                <div class="info-row">
+                    <div class="info-label">Полное наименование</div>
+                    <div class="info-value">
+                        Иностранное Предприятие в форме Общества с ограниченной ответственностью «TAIBA
+                        FINANCE»
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="companyInfo">
+            <h2>Адрес</h2>
+            <div class="info-box">
+                <div class="info-row">
+                    <div class="info-label">Адрес</div>
+                    <div class="info-value">100084, г. Ташкент, Юнусабадский район, ул. А. Темура, №107-Б, 13-й этаж,
+                        блок С</div>
+                </div>
+                <div class="divider"></div>
+                <div class="info-row">
+                    <div class="info-label">Телефон</div>
+                    <div class="info-value">
+                        +998 (78) 140-44-49
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="info-row">
+                    <div class="info-label">Факс</div>
+                    <div class="info-value">
+                        +998 (78) 140-44-48
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="info-row">
+                    <div class="info-label">E-mail</div>
+                    <div class="info-value">
+                        info@taibaleasing.com
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="info-row">
+                    <div class="info-label">Получатель</div>
+                    <div class="info-value">
+                        ИП ООО «TAIBA FINANCE»
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="companyMap">
+            <h2>Локация</h2>
+            <div id="mapContainer" style="position: relative;">
+                <div id="mapOverlay"></div>
+
+                <div id="map"></div>
+            </div>
+        </div>
+    </main>
+    <div data-include="/layouts/footer.html"></div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="module" src="/js/contacts.js"></script>
+
+</html>

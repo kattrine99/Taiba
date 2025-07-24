@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ijara</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div data-include="layouts/header.html"></div>
+    <div data-include="components/vidjet_connection.html"></div>
+    <main>
+        <div class="mainSection">
+            <div class="mainSection-component shariat-full">
+                <div class="mainSection-breadcrumb">
+                    <a href="/index.html" class="grey">
+                        <p>Главная</p>
+                    </a>
+                    <span class="grey"> >> </span>
+                    <a href="#">
+                        <p>Соответствие Шариату</p>
+                    </a>
+
+                </div>
+                <div class="mainSection-container">
+                    <div class="mainSection-text">
+                        <h1>Соответствие Шариату</h1>
+                        <p>Исламское финансирование имеет социальную направленность с приоритетом морально-этических
+                            принципов, так как важнейшей задачей ислама является обеспечение благополучия людей, через
+                            сохранение их жизни, разума, чести и имущества</p>
+                    </div>
+                    <div class="mainSection-buttons">
+                        <a href="/aboutcompany.html" id="request">О компании</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shariat-articles">
+            <div class="shariat-articles_cards" id="cardWrapper"></div>
+            <div class="pagination" id="paginationControls">
+                <button class="pagination-prev">
+                    
+                </button>
+                <span class="pagination-page"></span>
+                <button class="pagination-next">
+                </button>
+            </div>
+        </div>
+        <div data-include="/components/news.html"></div>
+    </main>
+    <div data-include="/layouts/footer.html"></div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="module" src="/js/shariat.js"></script>
+
+</html>
