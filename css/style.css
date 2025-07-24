@@ -989,6 +989,8 @@ body {
 
 .form-approval .note,
 .form-approval .note a,
+.form-approval-mobile .note,
+.form-approval-mobile .note a,
 .have_questions_form p,
 .have_questions_form p a {
     margin-top: 16px;
@@ -1571,11 +1573,16 @@ footer {
 }
 
 .footer-dropdown {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.8s ease-in-out, opacity 0.6s ease-in-out;
 }
 
+/* При показе */
 .footer-dropdown.show {
-    display: block;
+    max-height: 200px;
+    opacity: 1;
 }
 
 .lowerFooter_info p,
@@ -2314,6 +2321,10 @@ footer {
         margin-top: 64px;
     }
 
+    .form-row {
+        flex-direction: column;
+    }
+
     /* ---------- Преимущества  ---------- */
 
     .trust-grid {
@@ -2386,7 +2397,10 @@ footer {
     }
 
     /* ---------- особенности ---------- */
-    .qualities_cards,
+    .qualities_cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .qualities_content {
         flex-direction: column;
     }
@@ -2528,7 +2542,13 @@ footer {
         height: 32px;
     }
 
-    .form-row {
-        flex-direction: column;
+    #paginationControls {
+        justify-content: center;
     }
+
+    /* ---------- особенности ---------- */
+    .qualities_cards {
+        grid-template-columns: 1fr;
+    }
+
 }

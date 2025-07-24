@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     initializeHeader();
     initializeContactWidget();
+    initializeDropdownMenus();
     initFormSwitcher();
 
     // Главный слайдер
@@ -28,7 +29,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     waitForNewsSwiperAndInit();
     waitForPartnersSwiperAndInit();
     initSingleVideo();
-    initializeDropdownMenus();
     showFAQ();
     smoothScroll();
 
@@ -125,7 +125,6 @@ function waitForNewsSwiperAndInit() {
         if (swiperEl && slideEls.length > 0) {
             clearInterval(checkExist);
             newsSwiper();
-            console.log('✅ Swiper инициализирован');
         }
     }, 100);
 }
@@ -136,7 +135,6 @@ function waitForPartnersSwiperAndInit() {
         if (swiperEl && slideEls.length > 0) {
             clearInterval(checkExist);
             partnerSwiper();
-            console.log('✅ Swiper инициализирован');
         }
     }, 100);
 }
