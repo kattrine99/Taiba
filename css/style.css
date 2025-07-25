@@ -421,6 +421,11 @@ body {
     overflow: hidden;
 }
 
+.about_company {
+    background-image: url(/images/about_company-img.webp);
+    overflow: hidden;
+}
+
 .textAndButtons,
 .mainSection-container {
     padding: calc(40px + (88 - 40) * ((100vw - 340px) / (1600 - 340))) calc(16px + (39 - 16) * ((100vw - 340px) / (1600 - 340)));
@@ -492,7 +497,9 @@ body {
     gap: 16px;
 }
 
-#shariat {
+
+#shariat,
+#murabakhaBtn {
     background-color: #FFFFFF1A;
     color: #fff;
 }
@@ -509,8 +516,14 @@ body {
 .deals-section,
 .qualities,
 .documents,
-.news-infoFull {
+.news-infoFull,
+.control-section,
+.certificates-section {
     margin: calc(100px + (150 - 100) * ((100vw - 340px) / (1600 - 340))) calc(16px + (50 - 16) * ((100vw - 340px) / (1600 - 340))) 0;
+}
+
+.anti-corruption-section {
+    margin: calc(100px + (150 - 100) * ((100vw - 340px) / (1600 - 340))) 0 0 calc(16px + (50 - 16) * ((100vw - 340px) / (1600 - 340)));
 }
 
 .documents .documents_text h2 {
@@ -534,7 +547,8 @@ body {
 .deals-section_breadcrumb p,
 .qualities_breadcrumb p,
 .documents_breadcrumb p,
-.contacts_section-breadcrumb p {
+.contacts_section-breadcrumb p,
+.control-section_breadcrumb p {
     flex: 1;
     font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
     line-height: 120%;
@@ -553,7 +567,8 @@ body {
 .faq_breadcrumb p,
 .deals-section_breadcrumb p,
 .qualities_breadcrumb p,
-.documents_breadcrumb p {
+.documents_breadcrumb p,
+.control-section_breadcrumb p {
     font-size: calc(14px + (16 - 14) * ((100vw - 340px) / (1600 - 340)));
     margin-bottom: calc(14px + (16 - 14) * ((100vw - 340px) / (1600 - 340)));
 }
@@ -585,7 +600,10 @@ body {
 .banner-small h2,
 .deals-heading h2,
 .products_card_maintext h2,
-.aboutUs_text h2 {
+.aboutUs_text h2,
+.control-section_textAnd_buttons h2,
+.certificates-section_textAnd_buttons h2,
+.anti-corruption_text h2 {
     flex: 1;
     font-weight: 700;
     font-size: calc(30px + (48 - 30) * ((100vw - 340px) / (1600 - 340)));
@@ -804,7 +822,8 @@ body {
 .form-approval input,
 .file-label,
 #file,
-.form-group input {
+.form-group input,
+.have_questions_form-btn button {
     padding: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340))) calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340)));
     font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
     line-height: 120%;
@@ -1152,7 +1171,8 @@ body {
 .qualities_text p,
 .murabakha_text-and-breadcrumbs .products_card_maintext h2,
 .documents_text h2 {
-    max-width: 60rem;
+    max-width: 45rem;
+    text-align: start;
 }
 
 .aboutUs_text p,
@@ -1268,7 +1288,9 @@ body {
 }
 
 .news_textAnd_buttons,
-.swiper-buttons {
+.swiper-buttons,
+.control-section_textAnd_buttons,
+.certificates-section_textAnd_buttons {
     display: flex;
     gap: 12px;
     justify-content: space-between;
@@ -1276,7 +1298,11 @@ body {
 }
 
 .swiper-button-next-news,
-.swiper-button-prev-news {
+.swiper-button-prev-news,
+.swiper-button-prev-control,
+.swiper-button-next-control,
+.swiper-button-prev-certificate,
+.swiper-button-next-certificate {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1290,6 +1316,13 @@ body {
         color: #fff;
         background-color: #D1C29D;
     }
+}
+
+.swiper-button-prev-control.hidden,
+.swiper-button-next-control.hidden,
+.swiper-button-prev-certificate.hidden,
+.swiper-button-next-certificate.hidden {
+    display: none;
 }
 
 .newsSwiper {
@@ -1306,7 +1339,8 @@ body {
     z-index: 0;
 }
 
-.newsswiper-content {
+.newsswiper-content,
+.person-content {
     margin: 10px 0;
     display: flex;
     flex-direction: column;
@@ -1324,6 +1358,29 @@ body {
     }
 }
 
+.person-content {
+    padding: calc(16px + (24 - 16) * ((100vw - 340px) / (1600 - 340)));
+    height: 100%;
+
+}
+
+.peopleSwiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.peopleSwiper .swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.person-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .swipe_img .shariat-card-img {
     width: 100%;
     height: 200px;
@@ -1331,23 +1388,47 @@ body {
     background-color: #eee;
 }
 
+.person_img,
+.certificate-img {
+    width: 100%;
+    height: 27.5rem;
+    overflow: hidden;
+}
+
 .swipe_img img,
-.shariat-card-img img {
+.shariat-card-img img,
+.person_img img,
+.certificate-img img {
     width: 100%;
     height: 100%;
+    max-height: 23.5rem;
     object-fit: cover;
+    object-position: center;
     display: block;
 }
 
-.shariat-card-img img {
+.shariat-card-img img,
+.person_img img,
+.certificate-img img {
     border-radius: 16px;
 }
 
-.swipe_Text {
+.certificate-img img {
+    object-fit: contain;
+}
+
+.swipe_Text,
+.certificateSwiper-wrapper .swipe_Text,
+.control-section .swipe_Text {
     flex: 1;
     display: flex;
     flex-direction: column;
     padding: 16px;
+}
+
+.certificateSwiper-wrapper .swipe_Text,
+.control-section .swipe_Text {
+    padding: 0;
 }
 
 .swipe_Text .text {
@@ -1366,6 +1447,10 @@ body {
     color: #3A4342;
 }
 
+.certificateSwiper .swipe_Text h3 {
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+
+}
 
 .swipe_Text .data {
     margin-top: auto;
@@ -1531,15 +1616,19 @@ footer {
     margin-top: calc(32px + (48 - 32) * ((100vw - 340px) / (1600 - 340)))
 }
 
-.have_questions_form-btn {
+.have_questions_form-btn button {
     background-color: #D1C29D;
+    border: 1px solid #D1C29D;
+    display: flex;
+    width: 100%;
     padding: calc(18px + (24 - 18) * ((100vw - 340px) / (1600 - 340)));
     border-radius: 16px;
     align-items: center;
+    outline: none;
     justify-content: center;
 }
 
-.have_questions_form-btn a {
+.have_questions_form-btn button {
     text-decoration: none;
     color: #fff;
 }
@@ -2201,6 +2290,99 @@ footer {
     pointer-events: auto;
 }
 
+/* ---------- О компании слайдер ---------- */
+.yearSwiper {
+    width: 100%;
+    overflow: hidden;
+    min-height: 1px;
+}
+
+.yearSwiper .swiper-wrapper {
+    display: flex;
+}
+
+.yearSwiper .swiper-slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.timeline-pagination {
+    position: relative;
+    margin-top: 40px;
+    padding-bottom: 30px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background-color: #004d40;
+    z-index: 1;
+}
+
+.timeline-dots {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-btn {
+    position: relative;
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid #004d40;
+    border-radius: 8px;
+    color: #004d40;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.timeline-btn.active {
+    background-color: #004d40;
+    color: white;
+}
+
+.timeline-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #004d40;
+    border-radius: 50%;
+}
+
+/* ---------- Анти-коррупция---------- */
+.anti-corruption-section {
+    display: flex;
+    gap: 20px;
+}
+
+.anti-corruption-fulltextAndImg {
+    display: flex;
+    flex: 1 1;
+}
+
+.anti-corruption-section .anti-corruption_text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.anti-corruption-img img {
+    object-fit: contain;
+    width: 100%;
+    object-position: center right;
+}
+
 @media (max-width: 1360px) {
     /* ---------- Хедер ---------- */
 
@@ -2364,7 +2546,8 @@ footer {
     }
 
     /* ---------- Новости  ---------- */
-    .news_textAnd_buttons {
+    .news_textAnd_buttons,
+    .control-section_textAnd_buttons {
         flex-direction: column;
         gap: 20px;
     }
