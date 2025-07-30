@@ -518,7 +518,8 @@ body {
 .documents,
 .news-infoFull,
 .control-section,
-.certificates-section {
+.certificates-section,
+.calculator {
     margin: calc(100px + (150 - 100) * ((100vw - 340px) / (1600 - 340))) calc(16px + (50 - 16) * ((100vw - 340px) / (1600 - 340))) 0;
 }
 
@@ -526,7 +527,8 @@ body {
     margin: calc(100px + (150 - 100) * ((100vw - 340px) / (1600 - 340))) 0 0 calc(16px + (50 - 16) * ((100vw - 340px) / (1600 - 340)));
 }
 
-.documents .documents_text h2 {
+.documents .documents_text h2,
+.calculator h2 {
     margin-bottom: calc(32px + (48 - 32) * ((100vw - 340px) / (1600 - 340)));
 }
 
@@ -548,7 +550,8 @@ body {
 .qualities_breadcrumb p,
 .documents_breadcrumb p,
 .contacts_section-breadcrumb p,
-.control-section_breadcrumb p {
+.control-section_breadcrumb p,
+.calculator_breadcrumb p {
     flex: 1;
     font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
     line-height: 120%;
@@ -568,7 +571,8 @@ body {
 .deals-section_breadcrumb p,
 .qualities_breadcrumb p,
 .documents_breadcrumb p,
-.control-section_breadcrumb p {
+.control-section_breadcrumb p,
+.calculator_breadcrumb p {
     font-size: calc(14px + (16 - 14) * ((100vw - 340px) / (1600 - 340)));
     margin-bottom: calc(14px + (16 - 14) * ((100vw - 340px) / (1600 - 340)));
 }
@@ -603,7 +607,8 @@ body {
 .aboutUs_text h2,
 .control-section_textAnd_buttons h2,
 .certificates-section_textAnd_buttons h2,
-.anti-corruption_text h2 {
+.anti-corruption_text h2,
+.calculator h2 {
     flex: 1;
     font-weight: 700;
     font-size: calc(30px + (48 - 30) * ((100vw - 340px) / (1600 - 340)));
@@ -675,7 +680,11 @@ body {
 .qualities-card-text p,
 .info-text p,
 .info-button-next-news,
-.info-button-prev-news {
+.info-button-prev-news,
+.calculator-form-group,
+.calculator-form-group input::placeholder,
+.calculator-form-group select,
+.calculator-result-boxes .result-box p {
     font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
     line-height: 120%;
     color: #3A4342;
@@ -1155,6 +1164,7 @@ body {
 .murabakha_text-and-breadcrumbs,
 .breadcrumbsAndText {
     display: flex;
+    flex: 1 1;
     justify-content: space-between;
 }
 
@@ -1447,7 +1457,8 @@ body {
     color: #3A4342;
 }
 
-.certificateSwiper .swipe_Text h3 {
+.certificateSwiper .swipe_Text h3,
+.calculator-toggle-details-btn {
     font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
 
 }
@@ -1827,7 +1838,6 @@ footer {
 
 .legal-entity-docs {
     display: flex;
-    flex-direction: row;
     align-items: stretch;
     gap: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
 }
@@ -2189,7 +2199,8 @@ footer {
     }
 }
 
-.shariat-card h4 {
+.shariat-card h4,
+.calculator-result-boxes .result-box .number {
     font-weight: 700;
     font-size: calc(20px + (24 - 20) * ((100vw - 340px) / (1600 - 340)));
     line-height: 110%;
@@ -2291,72 +2302,94 @@ footer {
 }
 
 /* ---------- О компании слайдер ---------- */
-.yearSwiper {
-    width: 100%;
+.yearContentSwiper {
+    max-width: 920px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
     overflow: hidden;
-    min-height: 1px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.yearSwiper .swiper-wrapper {
+.yearContentSwiper .swiper-slide {
+    padding: 40px;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.yearSwiper .swiper-slide {
-    width: 100%;
-    flex-shrink: 0;
+.yearContentSwiper .swiper-slide img {
+    max-width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
 }
 
-.timeline-pagination {
+.yearContentSwiper .year-text {
+    font-size: 18px;
+    color: #333;
+}
+
+.years-pagination-wrapper {
     position: relative;
-    margin-top: 40px;
-    padding-bottom: 30px;
+    padding-bottom: 32px;
 }
 
-.timeline-line {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    height: 2px;
-    background-color: #004d40;
-    z-index: 1;
+.yearsPaginationSwiper {
+    width: 100%;
+    overflow: visible;
 }
 
-.timeline-dots {
+.yearsPaginationSwiper .swiper-wrapper {
     display: flex;
     justify-content: space-between;
     position: relative;
-    z-index: 2;
 }
 
-.timeline-btn {
-    position: relative;
-    padding: 10px 16px;
-    background: white;
-    border: 1px solid #004d40;
-    border-radius: 8px;
-    color: #004d40;
+.yearsPaginationSwiper .swiper-slide {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #0C4342;
+    background: #fff;
+    color: #0C4342;
     font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s ease;
     white-space: nowrap;
+    cursor: pointer;
+    z-index: 2;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.timeline-btn.active {
-    background-color: #004d40;
-    color: white;
+.yearsPaginationSwiper .swiper-slide.active {
+    background: #0C4342;
+    color: #fff;
+    border: 2px solid #0C4342;
 }
 
-.timeline-btn::after {
-    content: '';
+/* Линия под */
+.years-pagination-wrapper::before {
+    content: "";
     position: absolute;
-    bottom: -15px;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #0C4342;
+    z-index: 0;
+}
+
+/* Точки под каждой кнопкой */
+.yearsPaginationSwiper .swiper-slide::after {
+    content: "";
+    position: absolute;
+    bottom: -35px;
     left: 50%;
     transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background-color: #004d40;
+    width: 15px;
+    height: 15px;
+    background: #0C4342;
     border-radius: 50%;
+    z-index: 1;
 }
 
 /* ---------- Анти-коррупция---------- */
@@ -2382,6 +2415,260 @@ footer {
     width: 100%;
     object-position: center right;
 }
+
+/* ---------- Калькулятор---------- */
+.calculator-info {
+    display: flex;
+    flex: 1 1;
+    gap: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.calculator-form-section {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.calculator-result-boxes {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.percentage-section {
+    display: flex;
+    gap: 20px;
+    color: #3A4342;
+    margin-bottom: calc(8px + (64 - 8) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.percentage-section p {
+    padding: calc(14px + (16 - 14) * ((100vw - 340px) / (1600 - 340))) calc(18px + (24 - 18) * ((100vw - 340px) / (1600 - 340)));
+    border: 1px solid #D1C29D;
+    border-radius: 16px;
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 110%;
+}
+
+.percentage-section p span {
+    color: #D1C29D;
+}
+
+.calculator-form-group {
+    display: flex;
+    flex-direction: column;
+    padding: calc(18px + (20 - 18) * ((100vw - 340px) / (1600 - 340))) calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340)));
+    background-color: #fff;
+    border-radius: 16px;
+}
+
+.calculator-form-group input::placeholder,
+.calculator-form-group select {
+    color: #999D9C;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.calculator-form-group input,
+.calculator-form-group select {
+    outline: none;
+    background-color: white;
+    padding-top: 8px;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.calculator-form-group select option {
+    padding: calc(18px + (20 - 18) * ((100vw - 340px) / (1600 - 340))) calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.calculator-form-group select option:hover {
+    background-color: #184B50;
+}
+
+.custom-arrow {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+.calculator-result-boxes .result-box {
+    background-color: #D1C29D;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340))) calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340)));
+    border-radius: 16px;
+
+}
+
+.calculator-result-boxes .result-box p,
+.calculator-result-boxes .result-box .number {
+    color: #fff;
+}
+
+.calculator-toggle-details-btn {
+    width: 100%;
+    background-color: #184B50;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: calc(32px + (40 - 32) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.calculator-toggle-details-btn .btn-icon {
+    display: flex;
+    align-items: center;
+}
+
+.rotate-up {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.calculator-details-section {
+    margin-top: 32px;
+}
+
+/* Обёртка для горизонтального скролла */
+.table-container {
+    overflow-x: auto;
+    margin-top: 24px;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+/* Основная таблица */
+.calculator-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 768px;
+    background: #ffffff;
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+    color: #3A4342;
+    border-radius: 16px;
+}
+
+.calculator-table thead {
+    background: #ffffff;
+
+}
+
+.calculator-table thead th {
+    background: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 24px 40px;
+    white-space: nowrap;
+    text-align: center;
+    border-bottom: 1px solid #F7F7F7;
+}
+
+.calculator-table td {
+    padding: 24px 40px;
+    white-space: nowrap;
+    text-align: center;
+
+}
+
+.calculator-table .even {
+    background-color: #F7F7F7;
+}
+
+.calculator-table tfoot {
+    background: #fff;
+    border-bottom: none;
+    font-weight: 600;
+}
+
+
+/* Скрытие скроллбара */
+.table-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/*------ Кнопки под таблицей ------*/
+.calculator-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+    flex: 1 1;
+}
+
+.calculator-actions-btn {
+    flex: 0.3;
+    padding: 16px 24px;
+    border-radius: 16px;
+    border: none;
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 120%;
+    cursor: pointer;
+    justify-content: center;
+    background: #184B50;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    gap: 8px;
+}
+
+.calculator-actions-btn-pdf {
+    background: #D1C29D;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #fff;
+    align-items: center;
+    border-radius: 16px;
+    color: #3A4342;
+    padding: calc(24px + (40 - 24) * ((100vw - 340px) / (1600 - 340)));
+}
+
+.summary p {
+    font-weight: 700;
+    font-size: calc(16px + (24 - 16) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 110%;
+}
+
+.summary ul,
+.summary ul p {
+    font-weight: 300;
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1600 - 340)));
+    line-height: 130%;
+    text-align: center;
+    list-style: none;
+}
+
 
 @media (max-width: 1360px) {
     /* ---------- Хедер ---------- */
@@ -2507,6 +2794,10 @@ footer {
         flex-direction: column;
     }
 
+    .form-textAnd-phone {
+        width: 100%;
+    }
+
     /* ---------- Преимущества  ---------- */
 
     .trust-grid {
@@ -2604,6 +2895,10 @@ footer {
         padding: calc(24px + (32 - 24) * ((100vw - 340px) / (1600 - 340)));
     }
 
+    .legal-entity-docs_leftCard .list {
+        padding-left: 24px;
+    }
+
     /* ---------- Контакты  ---------- */
     .contacts_section-images {
         flex-direction: column;
@@ -2617,7 +2912,7 @@ footer {
     }
 
 
-    /* ---------- полная нформация новости  ---------- */
+    /* ---------- полная информация новости  ---------- */
     #ads {
         display: none;
     }
@@ -2669,6 +2964,20 @@ footer {
 
     .footer_work_buttons {
         margin: 20px;
+    }
+
+    /* ---------- Калькулятор  ---------- */
+
+    .calculator-info {
+        flex-direction: column;
+    }
+
+    .calculator-result-boxes {
+        gap: 16px;
+    }
+
+    .calculator-actions {
+        flex-direction: column;
     }
 }
 

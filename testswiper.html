@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>История компании</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #fff;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before, body::after {
+            content: "";
+            position: fixed;
+            top: 0; bottom: 0;
+            width: 40px;
+            background: #BDBDBD;
+            z-index: 0;
+        }
+        body::before { left: 0; }
+        body::after { right: 0; }
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0 0 0;
+            position: relative;
+            z-index: 1;
+        }
+        h2 {
+            text-align: left;
+            margin-bottom: 16px;
+            font-size: 44px;
+            font-weight: 800;
+            color: #0C4342;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+        .subtitle {
+            color: #8C8C8C;
+            font-size: 16px;
+            margin-bottom: 8px;
+            max-width: 700px;
+        }
+        .desc {
+            color: #8C8C8C;
+            font-size: 16px;
+            margin-bottom: 32px;
+            max-width: 700px;
+        }
+        .yearContentSwiper {
+            max-width: 920px;
+            margin: 0 auto 32px auto;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .yearContentSwiper .swiper-wrapper {
+            display: flex;
+            gap: 24px;
+        }
+        .yearContentSwiper .swiper-slide {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: none;
+        }
+        .yearContentSwiper .swiper-slide img {
+            max-width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            height: 180px;
+        }
+        .yearContentSwiper .year-text {
+            font-size: 16px;
+            color: #333;
+            padding: 0 8px 16px 8px;
+        }
+        /* Новый таймлайн */
+        .years-pagination-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 48px;
+            width: 100%;
+        }
+        .yearsPaginationSwiper {
+            width: 100%;
+            overflow: visible;
+        }
+        .yearsPaginationSwiper .swiper-wrapper {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .yearsPaginationSwiper .swiper-slide {
+            width: auto !important;
+            min-width: 180px;
+            max-width: 260px;
+            white-space: nowrap;
+            padding: 10px 28px;
+            border-radius: 10px;
+            border: 2px solid #0C4342;
+            background: #fff;
+            color: #0C4342;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+            position: relative;
+            text-align: center;
+        }
+        .yearsPaginationSwiper .swiper-slide.active {
+            background: #0C4342;
+            color: #fff;
+        }
+        .years-pagination-wrapper::before {
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #0C4342;
+            z-index: 0;
+        }
+        .yearsPaginationSwiper .swiper-slide::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -35px;
+            width: 15px;
+            height: 15px;
+            background: #0C4342;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        @media (max-width: 1100px) {
+            .main-container { max-width: 98vw; }
+            .yearContentSwiper, .years-pagination-wrapper { max-width: 98vw; }
+        }
+        @media (max-width: 900px) {
+            .yearContentSwiper .swiper-wrapper { gap: 12px; }
+            .year-btn { font-size: 15px; }
+        }
+        @media (max-width: 700px) {
+            .main-container { padding: 16px 0 0 0; }
+            h2 { font-size: 28px; }
+            .subtitle, .desc { font-size: 14px; }
+            .yearContentSwiper .swiper-slide img { height: 120px; }
+            .year-btn { font-size: 13px; padding: 8px 0; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="subtitle">/ история компании</div>
+        <h2>НАШ ПУТЬ К СТАНОВЛЕНИЮ<br>ЧАСТЬЮ ИСЛАМСКОЙ ЭКОНОМИКИ</h2>
+        <div class="desc">
+            TAIBA FINANCE уверенно развивается с 2010 года, следуя шариатским принципам и международным стандартам. Ключевые этапы роста отражают стремление к качеству, прозрачности и устойчивости в сфере исламских финансов.<br><br>
+            Команда опиралась на международную экспертизу и мандат Исламской Корпорации по Развитию Частного Сектора, что позволило выстроить устойчивую модель с акцентом на долгосрочные партнёрства и доверие клиентов.
+        </div>
+        <!-- Слайдер контента -->
+        <div class="swiper yearContentSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1015/800/300" alt="2010">
+                    <div class="year-text">
+                        В 2010 году была основана компания TAIBA FINANCE. Это стало первым шагом к устойчивому развитию исламского финансирования в регионе.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1025/800/300" alt="2011">
+                    <div class="year-text">
+                        В 2011 году началась активная деятельность с опорой на международную экспертизу и принципы шариата.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1035/800/300" alt="2012">
+                    <div class="year-text">
+                        В 2012 году TAIBA FINANCE расширила сеть партнёрств и привлекла новых инвесторов.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1045/800/300" alt="2013">
+                    <div class="year-text">
+                        В 2013 году началось внедрение инновационных финансовых продуктов на базе исламских стандартов.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1045/800/300" alt="2013">
+                    <div class="year-text">
+                        В 2013 году началось внедрение инновационных финансовых продуктов на базе исламских стандартов.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1045/800/300" alt="2013">
+                    <div class="year-text">
+                        В 2013 году началось внедрение инновационных финансовых продуктов на базе исламских стандартов.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1045/800/300" alt="2013">
+                    <div class="year-text">
+                        В 2013 году началось внедрение инновационных финансовых продуктов на базе исламских стандартов.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1045/800/300" alt="2013">
+                    <div class="year-text">
+                        В 2013 году началось внедрение инновационных финансовых продуктов на базе исламских стандартов.
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/id/1045/800/300" alt="2013">
+                    <div class="year-text">
+                        В 2013 году началось внедрение инновационных финансовых продуктов на базе исламских стандартов.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Пагинация по годам -->
+        <div class="years-pagination-wrapper">
+            <div class="swiper yearsPaginationSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">2010 • Год основания</div>
+                    <div class="swiper-slide">2011 • Начало деятельности</div>
+                    <div class="swiper-slide">2012 • Рост компании</div>
+                    <div class="swiper-slide">2013 • Расширение</div>
+                    <div class="swiper-slide">2014 • Успехи</div>
+                    <div class="swiper-slide">2014 • Успехи</div>
+                    <div class="swiper-slide">2014 • Успехи</div>
+                    <div class="swiper-slide">2014 • Успехи</div>
+                    <div class="swiper-slide">2014 • Успехи</div>
+                    <div class="swiper-slide">2014 • Успехи</div>
+                    <div class="swiper-slide">2014 • Успехи</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let contentSwiper = new Swiper(".yearContentSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            autoHeight: false,
+            effect: "slide",
+            on: {
+                slideChange: function () {
+                    yearNavSwiper.slideTo(this.activeIndex);
+                    updateActiveYear(this.activeIndex);
+                }
+            }
+        });
+        let yearNavSwiper = new Swiper(".yearsPaginationSwiper", {
+            slidesPerView: 'auto',
+            spaceBetween: 12,
+            freeMode: false,
+            slideToClickedSlide: true,
+            on: {
+                click: function () {
+                    contentSwiper.slideTo(this.clickedIndex);
+                }
+            }
+        });
+        function updateActiveYear(index) {
+            document.querySelectorAll(".yearsPaginationSwiper .swiper-slide").forEach((el, i) => {
+                el.classList.toggle("active", i === index);
+            });
+        }
+        updateActiveYear(0);
+    </script>
+</body>
+
+</html>

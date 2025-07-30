@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.lines {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bold-line {
+    border-bottom: 3px solid #000;
+    margin-top: 10px;
+}
+
+.line {
+    border-bottom: 1px solid #000;
+}
+
+header {
+    display: flex;
+    gap: 40px;
+    flex: 1 1;
+}
+
+header .logo {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.header_text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pdf-title {
+    margin-top: 20px;
+}
+
+.pdf-title,
+.pdf-subtitle {
+    text-align: center;
+}
+
+.pdf-subtitle {
+    font-weight: 700;
+    font-style: Bold Italic;
+    font-size: 10px;
+    line-height: 120%;
+    text-align: center;
+}
+
+.info-table,
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.info-table td {
+    padding: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 120%;
+
+}
+
+.item-info {
+    border: 1px solid #F7F7F7;
+    font-weight: 300 !important;
+}
+
+.item-info.even {
+    background-color: #F7F7F7;
+}
+
+.payment-table th,
+.payment-table td {
+    border: 1px solid #F7F7F7;
+    padding: 6px;
+    text-align: center;
+}
+
+tfoot {
+    text-align: right;
+    font-weight: bold;
+}

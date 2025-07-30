@@ -3,6 +3,7 @@ import { initializeContactWidget } from './vidjet.js';
 import { initFormSwitcher } from './form_approval.js';
 import { initializeDropdownMenus } from './footer.js';
 import { showFAQ } from './faq.js';
+import { initCalculator } from './calculator.js';
 
 async function includeHTML(selector) {
     const elements = document.querySelectorAll(selector);
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     initializeDropdownMenus();
     showFAQ();
     smoothScroll();
+    initCalculator();
 
 });
 export function smoothScroll() {

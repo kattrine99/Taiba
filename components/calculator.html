@@ -1,0 +1,144 @@
+<div class="calculator">
+    <div class="calculator_breadcrumb">
+        <p>/ калькулятор</p>
+    </div>
+    <h2>Рассчитайте платеж</h2>
+
+    <div class="calculator-info">
+        <div class="calculator-form-section">
+            <div class="percentage-section">
+                <p>Доход компании <span>17%</span></p>
+                <p>Комиссия <span>2%</span></p>
+            </div>
+            <div class="calculator-form-group">
+                <label>Стоимость объекта иджара</label>
+                <input type="text" placeholder="от 200 000 000 сум до 2 500 000 000 сум" />
+            </div>
+            <div class="calculator-form-group">
+                <label>Процент предоплаты</label>
+                <input type="text" placeholder="от 30% до 50%" />
+            </div>
+            <div class="calculator-form-group custom-select-wrapper">
+                <label>Срок
+                </label>
+                <select class="calculator-form-group-custom-select">
+                    <option>13 месяцев</option>
+                    <option>24 месяца</option>
+                    <option>36 месяцев</option>
+                    <option>48 месяцев</option>
+                </select>
+                <div class="custom-arrow">
+                    <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.125 1.29492L4.5 4.82433L7.875 1.29492" stroke="#3A4342" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="calculator-result-boxes">
+            <div class="result-box">
+                <p>Ежемесячный платеж</p>
+                <p class="number">12 840 000 сум</p>
+            </div>
+            <div class="result-box">
+                <p>Общая стоимость иджары</p>
+                <p class="number">300 000 000 сум</p>
+            </div>
+            <div class="result-box">
+                <p>Сумма удорожания</p>
+                <p class="number">12 840 000 сум</p>
+            </div>
+            <div class="result-box">
+                <p>Сумма комиссии</p>
+                <p class="number">300 000 000 сум</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="calculator-toggle-details-btn" id="calculatortoggleDetailsBtn" onclick="">
+        <span class="btn-text">Получить детальный расчет</span>
+        <span class="btn-icon" id="btnIcon">
+            <svg id="arrowDown" width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.125 1.29492L4.5 4.82433L7.875 1.29492" stroke="#fff" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </span>
+    </button>
+
+    <div class="calculator-details-section" id="details" style="display:none;">
+        <div class="table-container">
+            <table class="calculator-table">
+                <thead>
+                    <tr>
+                        <th>Месяц</th>
+                        <th>Остаток основного долга</th>
+                        <th>Выплата основного долга</th>
+                        <th>Доход компании</th>
+                        <th>Ежемесячные платежи</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>155 350 000</td>
+                        <td>155 350 000</td>
+                        <td>155 350 000</td>
+                        <td>11 219 722,22</td>
+                    </tr>
+                    <tr class="even">
+                        <td>2</td>
+                        <td>155 350 000</td>
+                        <td>155 350 000</td>
+                        <td>155 350 000</td>
+                        <td>11 219 722,22</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>Итого:</td>
+                        <td>155 350 000</td>
+                        <td>46 605 000</td>
+                        <td>201 955 000</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+
+        <div class="summary">
+            <p>Полная стоимость иджара — 39.5%</p>
+            <ul>
+                <p> ПСК состоит:</p>
+                <li>Общая сумма платежей по основному долгу и процентам - 7 032 406 сум
+                </li>
+                <li>Расходы по оформлению залога — 910 000 сум
+                </li>
+                <li>Расходы по страхованию - 62 700 сум</li>
+            </ul>
+            <div class="calculator-actions">
+                <a href="#" class="calculator-actions-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.75 12.1785V4.5C12.75 4.08579 12.4142 3.75 12 3.75C11.5858 3.75 11.25 4.08579 11.25 4.5V12.1785L8.82617 9.26986C8.56099 8.95165 8.08807 8.90866 7.76986 9.17383C7.45165 9.43901 7.40866 9.91193 7.67383 10.2301L11.4238 14.7301C11.5663 14.9011 11.7774 15 12 15C12.2226 15 12.4337 14.9011 12.5762 14.7301L16.3262 10.2301C16.5913 9.91193 16.5483 9.43901 16.2301 9.17383C15.9119 8.90866 15.439 8.95165 15.1738 9.26986L12.75 12.1785Z"
+                            fill="currentColor" />
+                        <path
+                            d="M2.25 16.5C2.66421 16.5 3 16.8358 3 17.25V20.25C3 20.6642 3.33579 21 3.75 21H20.25C20.6642 21 21 20.6642 21 20.25V17.25C21 16.8358 21.3358 16.5 21.75 16.5C22.1642 16.5 22.5 16.8358 22.5 17.25V20.25C22.5 21.4926 21.4926 22.5 20.25 22.5H3.75C2.50736 22.5 1.5 21.4926 1.5 20.25V17.25C1.5 16.8358 1.83579 16.5 2.25 16.5Z"
+                            fill="currentColor" />
+                    </svg> Скачать информационный лист</a>
+                <a href="#" class="calculator-actions-btn calculator-actions-btn-pdf"><svg width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.75 12.1785V4.5C12.75 4.08579 12.4142 3.75 12 3.75C11.5858 3.75 11.25 4.08579 11.25 4.5V12.1785L8.82617 9.26986C8.56099 8.95165 8.08807 8.90866 7.76986 9.17383C7.45165 9.43901 7.40866 9.91193 7.67383 10.2301L11.4238 14.7301C11.5663 14.9011 11.7774 15 12 15C12.2226 15 12.4337 14.9011 12.5762 14.7301L16.3262 10.2301C16.5913 9.91193 16.5483 9.43901 16.2301 9.17383C15.9119 8.90866 15.439 8.95165 15.1738 9.26986L12.75 12.1785Z"
+                            fill="currentColor" />
+                        <path
+                            d="M2.25 16.5C2.66421 16.5 3 16.8358 3 17.25V20.25C3 20.6642 3.33579 21 3.75 21H20.25C20.6642 21 21 20.6642 21 20.25V17.25C21 16.8358 21.3358 16.5 21.75 16.5C22.1642 16.5 22.5 16.8358 22.5 17.25V20.25C22.5 21.4926 21.4926 22.5 20.25 22.5H3.75C2.50736 22.5 1.5 21.4926 1.5 20.25V17.25C1.5 16.8358 1.83579 16.5 2.25 16.5Z"
+                            fill="currentColor" />
+                    </svg> Скачать расчёт в PDF</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>

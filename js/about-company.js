@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     initializeDropdownMenus();
     initFormSwitcher();
     waitForNewsSwiperAndInit();
+    initYearSwipers();
     waitForPartnersSwiperAndInit();
-    waitForYearSliderAndInit();
     initPeopleSwipers();
     initCertificateSwipers();
 
@@ -60,55 +60,8 @@ function waitForPartnersSwiperAndInit() {
         }
     }, 100);
 }
-let Yearswiper;
 
-function waitForYearSliderAndInit() {
-    const checkExist = setInterval(() => {
-        const swiperEl = document.querySelector('.yearSwiper');
-        const slideEls = document.querySelectorAll('.yearSwiper .swiper-slide');
-        const timelineBtns = document.querySelectorAll('.timeline-btn');
 
-        const isVisible = swiperEl && swiperEl.offsetWidth > 0;
-
-        if (swiperEl && slideEls.length > 0 && timelineBtns.length > 0 && isVisible) {
-            clearInterval(checkExist);
-            initializeYearSlider();
-        }
-    }, 100);
-}
-
-function initializeYearSlider() {
-    if (Yearswiper) return;
-
-    Yearswiper = new Swiper(".yearSwiper", {
-        loop: false,
-        speed: 800,
-        allowTouchMove: false,
-    });
-
-    const buttons = document.querySelectorAll(".timeline-btn");
-
-    buttons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            Yearswiper.slideTo(index);
-            updateActiveButton(index);
-        });
-    });
-
-    Yearswiper.on("slideChange", () => {
-        updateActiveButton(Yearswiper.realIndex);
-    });
-    setTimeout(() => {
-        Yearswiper.update();
-    }, 200);
-}
-
-function updateActiveButton(activeIndex) {
-    const buttons = document.querySelectorAll(".timeline-btn");
-    buttons.forEach((btn, idx) => {
-        btn.classList.toggle("active", idx === activeIndex);
-    });
-}
 function initPeopleSwipers() {
     const sections = document.querySelectorAll('.control-section');
 
@@ -232,6 +185,50 @@ function initCertificateSwipers() {
         }
     }
 }
+
+function initYearSwipers() {
+    let contentSwiper = new Swiper(".yearContentSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        autoHeight: true,
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true
+        },
+        on: {
+            slideChange: function () {
+                yearNavSwiper.slideTo(this.activeIndex);
+                updateActiveYear(this.activeIndex);
+            }
+        }
+    });
+    let yearNavSwiper = new Swiper(".yearsPaginationSwiper", {
+        slidesPerView: 3,
+        spaceBetween: 12,
+        freeMode: true,
+        slideToClickedSlide: true,
+        on: {
+            click: function () {
+                contentSwiper.slideTo(this.clickedIndex);
+            }
+        }
+    });
+    function updateActiveYear(index) {
+        document.querySelectorAll(".yearsPaginationSwiper .swiper-slide").forEach((el, i) => {
+            el.classList.toggle("active", i === index);
+        });
+    }
+
+    updateActiveYear(0);
+}
+
+function updateActiveYear(index) {
+    document.querySelectorAll(".yearsPaginationSwiper .swiper-slide").forEach((el, i) => {
+        el.classList.toggle("active", i === index);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", initYearSwipers);
 
 
 
