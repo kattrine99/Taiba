@@ -187,14 +187,9 @@ function initCertificateSwipers() {
 }
 
 function initYearSwipers() {
-    let contentSwiper = new Swiper(".yearContentSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        autoHeight: true,
-        effect: "fade",
-        fadeEffect: {
-            crossFade: true
-        },
+    let contentSwiper = new Swiper("#yearContentSwiper", {
+        spaceBetween: 20,
+        allowTouchMove: false,
         on: {
             slideChange: function () {
                 yearNavSwiper.slideTo(this.activeIndex);
@@ -203,10 +198,25 @@ function initYearSwipers() {
         }
     });
     let yearNavSwiper = new Swiper(".yearsPaginationSwiper", {
-        slidesPerView: 3,
-        spaceBetween: 12,
-        freeMode: true,
+        slidesPerView: 5,
         slideToClickedSlide: true,
+        breakpoints: {
+            1280: {
+                slidesPerView: 5,
+            },
+            1024: {
+                slidesPerView: 4,
+            },
+            780: {
+                slidesPerView: 3,
+            },
+            630: {
+                slidesPerView: 2,
+            },
+            320: {
+                slidesPerView: 1,
+            },
+        },
         on: {
             click: function () {
                 contentSwiper.slideTo(this.clickedIndex);
@@ -214,21 +224,13 @@ function initYearSwipers() {
         }
     });
     function updateActiveYear(index) {
-        document.querySelectorAll(".yearsPaginationSwiper .swiper-slide").forEach((el, i) => {
+        document.querySelectorAll(".yearsPaginationSwiper .swiper-slide .yearsPagination-content p").forEach((el, i) => {
             el.classList.toggle("active", i === index);
         });
     }
-
     updateActiveYear(0);
 }
 
-function updateActiveYear(index) {
-    document.querySelectorAll(".yearsPaginationSwiper .swiper-slide").forEach((el, i) => {
-        el.classList.toggle("active", i === index);
-    });
-}
-
-document.addEventListener("DOMContentLoaded", initYearSwipers);
 
 
 

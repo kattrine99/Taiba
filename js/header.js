@@ -1,4 +1,3 @@
-// === ВНЕ initializeHeader — глобальные функции ===
 function toggleDropdown(button) {
     const dropdown = button?.nextElementSibling;
     const isOpen = dropdown?.classList.contains("show");
