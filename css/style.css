@@ -2334,6 +2334,39 @@ footer {
     overflow: hidden;
     margin-top: calc(50px + (64 - 50) * ((100vw - 340px) / (1600 - 340)));
     margin-bottom: calc(100px + (150 - 100) * ((100vw - 340px) / (1600 - 340)));
+    position: relative;
+}
+
+.yearsPagination-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 75px;
+    height: 3px;
+    background: #184B50;
+    z-index: 0;
+}
+
+.yearsPaginationSwiper .swiper-wrapper {
+    position: relative;
+    width: max-content;
+}
+
+.yearsPaginationSwiper .swiper-slide {
+    position: relative;
+}
+
+.yearsPaginationSwiper .circle-pag {
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: #0C4342;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .yearsPagination-content {
@@ -2355,29 +2388,6 @@ footer {
 .yearsPagination-content p.active {
     background-color: #184B50;
     color: #fff;
-}
-
-.yearsPaginationSwiper .swiper-wrapper {
-    border-bottom: 2px solid #184B50;
-    position: relative;
-    width: max-content;
-}
-
-.yearsPaginationSwiper .swiper-slide {
-    position: relative;
-}
-
-.yearsPaginationSwiper .circle-pag {
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
-    background: #0C4342;
-    border-radius: 50%;
-    z-index: 1;
-    pointer-events: none;
 }
 
 /* ---------- Анти-коррупция---------- */
