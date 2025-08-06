@@ -108,6 +108,7 @@ body {
 }
 
 .services-toggle {
+    text-wrap: nowrap;
     border: none;
 }
 
@@ -1164,7 +1165,6 @@ body {
 /* ---------- Немного о нас ---------- */
 .short-aboutUs_content,
 .qualities_content,
-.short-aboutUs_content,
 .murabakha_text-and-breadcrumbs,
 .breadcrumbsAndText {
     display: flex;
@@ -1395,11 +1395,13 @@ body {
     height: 100%;
 }
 
-.swipe_img .shariat-card-img {
-    width: 100%;
-    height: 200px;
+.swipe_img,
+.shariat-card-img {
+    max-height: 200px;
+    max-width: 440px;
+    margin: 24px;
+    border-radius: 16px;
     overflow: hidden;
-    background-color: #eee;
 }
 
 .person_img,
@@ -2308,6 +2310,12 @@ footer {
 /* ---------- О компании слайдер ---------- */
 .short-aboutUs_content {
     margin: calc(100px + (150 - 100) * ((100vw - 340px) / (1600 - 340))) calc(16px + (50 - 16) * ((100vw - 340px) / (1600 - 340))) 0;
+}
+
+.short-aboutUs_video,
+.vacancy-form {
+    margin: 0 calc(16px + (50 - 16) * ((100vw - 340px) / (1600 - 340))) 0;
+
 }
 
 #yearContentSwiper {
